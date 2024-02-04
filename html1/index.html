@@ -48,9 +48,25 @@
     <p><a href="./news.html">>>新着情報をもっと見る</a></p>
     <h3 id="contact">問い合わせ</h3>
     <p>サイトに関するお問い合わせはこちら</p>
-    <p>お名前（必須）:</p>
-    <p>メールアドレス :</p>
-    <p>お問い合わせ内容 :</p>
-    <p>送信する</p>
+    <form action="#" method="POST">
+      <dl>
+        <dt><label for="username">お名前（必須）:</label></dt>
+        <dd><input type="text" name="username" id="username" value="" /></dd>
+        <dt><label for="email">メールアドレス :</label></dt>
+        <dt>
+          <select name="type" id="type">
+            <option value="1">コーヒーについて</option>
+            <option value="2">その他</option>
+          </select>
+        </dt>
+        <dd><label for="type">お問い合わせ種類</label></dd>
+        <dd><input type="text" name="email" id="email" value="" /></dd>
+        <dt><label for="content">お問い合わせ内容 :</label></dt>
+        <dd>
+          <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        </dd>
+      </dl>
+      <p><input type="submit" value="送信する"></p>
+    </form>
   </body>
 </html>

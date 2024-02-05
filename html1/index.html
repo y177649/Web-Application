@@ -6,13 +6,17 @@
     <title>my coffee</title>
   </head>
   <body>
-    <h1>my coffee</h1>
-    <ul>
-      <li><a href="#about">MyCoffeeとは？</a></li>
-      <li><a href="#news">新着情報</a></li>
-      <li><a href="#contact">問い合わせ</a></li>
-      <li><a href="./table.html">料金一覧</a></li>
-    </ul>
+    <header>
+      <h1>my coffee</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">MyCoffeeとは？</a></li>
+          <li><a href="#news">新着情報</a></li>
+          <li><a href="#contact">問い合わせ</a></li>
+          <li><a href="./table.html">料金一覧</a></li>
+        </ul>
+      </nav>
+    </header>
     <h2>家でコーヒーを飲もう</h2>
     <p>
       <strong
@@ -24,50 +28,77 @@
       /></strong>
     </p>
     <p>#MyCoffee</p>
-    <h3 id="about">my coffeeとは？</h3>
-    <p>
-      皆さんコーヒーは好きですか？<br /><br />MyCoffeeは、家でコーヒーを嗜む方々向けの<strong>コーヒー専門サイト</strong>です。<br /><br />コーヒー好きの皆さんはぜひご覧ください。
-    </p>
-    <h3 id="news">新着情報</h3>
-    <img src="./img/coffee-02.jpg" alt="" width="260px" height="180px" />
-    <ol>
-      <li>
-        <h4>コーヒーの美味しい飲み方</h4>
-        <p>自宅で美味しいコーヒーを飲むには・・・</p>
-      </li>
-      <li>
-        <img src="./img/coffee-03.jpg" alt="" width="260px" height="180px" />
-        <h4>コーヒー豆とは？</h4>
-        <p>コーヒー豆を買っていますか？コーヒー・・・</p>
-      </li>
-      <li>
-        <img src="./img/coffee-04.jpg" alt="" width="260px" height="180px" />
-        <h4>コーヒー豆の栽培方法</h4>
-        <p>コーヒーの木を見たことはありますか？</p>
-      </li>
-    </ol>
-    <p><a href="./news.html">>>新着情報をもっと見る</a></p>
-    <h3 id="contact">問い合わせ</h3>
-    <p>サイトに関するお問い合わせはこちら</p>
-    <form action="#" method="POST">
-      <dl>
-        <dt><label for="username">お名前（必須）:</label></dt>
-        <dd><input type="text" name="username" id="username" value="" /></dd>
-        <dt><label for="email">メールアドレス :</label></dt>
-        <dt>
-          <select name="type" id="type">
-            <option value="1">コーヒーについて</option>
-            <option value="2">その他</option>
-          </select>
-        </dt>
-        <dd><label for="type">お問い合わせ種類</label></dd>
-        <dd><input type="text" name="email" id="email" value="" /></dd>
-        <dt><label for="content">お問い合わせ内容 :</label></dt>
-        <dd>
-          <textarea name="content" id="content" cols="30" rows="10"></textarea>
-        </dd>
-      </dl>
-      <p><input type="submit" value="送信する"></p>
-    </form>
+    <section>
+      <h3 id="about">my coffeeとは？</h3>
+      <p>
+        皆さんコーヒーは好きですか？<br /><br />MyCoffeeは、家でコーヒーを嗜む方々向けの<strong>コーヒー専門サイト</strong>です。<br /><br />コーヒー好きの皆さんはぜひご覧ください。
+      </p>
+    </section>
+    <section>
+      <h3 id="news">新着情報</h3>
+      <img src="./img/coffee-02.jpg" alt="" width="260px" height="180px" />
+      <ol>
+        <article>
+          <li>
+            <h4>コーヒーの美味しい飲み方</h4>
+            <p>自宅で美味しいコーヒーを飲むには・・・</p>
+          </li>
+        </article>
+        <article>
+          <li>
+            <img
+              src="./img/coffee-03.jpg"
+              alt=""
+              width="260px"
+              height="180px"
+            />
+            <h4>コーヒー豆とは？</h4>
+            <p>コーヒー豆を買っていますか？コーヒー・・・</p>
+          </li>
+        </article>
+        <article>
+          <li>
+            <img
+              src="./img/coffee-04.jpg"
+              alt=""
+              width="260px"
+              height="180px"
+            />
+            <h4>コーヒー豆の栽培方法</h4>
+            <p>コーヒーの木を見たことはありますか？</p>
+          </li>
+        </article>
+      </ol>
+      <p><a href="./news.html">>>新着情報をもっと見る</a></p>
+    </section>
+    <section>
+      <h3 id="contact">問い合わせ</h3>
+      <p>サイトに関するお問い合わせはこちら</p>
+      <form action="#" method="POST">
+        <dl>
+          <dt><label for="username">お名前（必須）:</label></dt>
+          <dd><input type="text" name="username" id="username" value="" /></dd>
+          <dt><label for="email">メールアドレス :</label></dt>
+          <dt>
+            <select name="type" id="type">
+              <option value="1">コーヒーについて</option>
+              <option value="2">その他</option>
+            </select>
+          </dt>
+          <dd><label for="type">お問い合わせ種類</label></dd>
+          <dd><input type="text" name="email" id="email" value="" /></dd>
+          <dt><label for="content">お問い合わせ内容 :</label></dt>
+          <dd>
+            <textarea
+              name="content"
+              id="content"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </dd>
+        </dl>
+        <p><input type="submit" value="送信する" /></p>
+      </form>
+    </section>
   </body>
 </html>

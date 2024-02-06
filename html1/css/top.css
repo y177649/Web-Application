@@ -1,0 +1,33 @@
+body {
+    color: #fff;
+    background-color: gray;
+}
+
+a {
+    color: #fff;
+}
+
+.content-title {
+    font-size: 2.5rem;
+}
+
+/* ヘッダー */
+.logo {
+    font-size: 1.5rem;
+}
+
+/*メイン*/
+.main-title {
+    font-size: 3rem;
+}
+
+/*about*/
+.about-description {
+    font-size: 1.8rem;
+}
+
+
+/* お問い合わせ */
+.contact-btn {
+    color: #fff;
+}

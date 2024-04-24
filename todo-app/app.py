@@ -4,22 +4,13 @@ def main(page: ft.Page):
     page.title = "Weekly To-Do List"
     page.vertical_alignment = "start"
 
-    def open_task_dialog(sender, day):
-        task_text = ft.TextField(hint_text="Enter a task for " + day, width=300)
-
-        def on_ok(e):
-            task = ft.Checkbox(label=task_text.value, value=False)
+    def add_task(control, text_field):
+        if text_field.value.strip() != "":
+            task = ft.Checkbox(label=text_field.value, value=False)
             task.on_change = strike_through_task
-            sender.data.controls.append(task)  # コントロールをColumnに追加
+            control.controls.append(task)
+            text_field.value = ""  # テキストフィールドをクリア
             page.update()
-
-        dialog = ft.Dialog(
-            title="Add Task",
-            content=task_text,
-            actions=[ft.OKCancelButtons(on_ok=on_ok)]
-        )
-        page.dialog = dialog
-        dialog.open()
 
     def strike_through_task(e):
         if e.control.value:
@@ -32,10 +23,11 @@ def main(page: ft.Page):
     days_columns = []
 
     for day in days:
-        day_column = ft.Column()  # Columnを作成
-        button = ft.ElevatedButton(text=day, on_click=lambda e, day=day: open_task_dialog(e.sender, day))
-        button.data = day_column  # ボタンに関連するColumnを保存
-        day_column.controls.append(button)  # ボタンをColumnのコントロールリストに追加
+        day_column = ft.Column(spacing=5)  # Columnを作成
+        label = ft.Text(value=day, size=20, weight="bold")
+        text_field = ft.TextField(width=300)
+        add_button = ft.ElevatedButton(text="Add Task", on_click=lambda e, day_column=day_column, text_field=text_field: add_task(day_column, text_field))
+        day_column.controls.extend([label, text_field, add_button])
         days_columns.append(day_column)
 
     days_row = ft.Row(wrap=True, controls=days_columns, spacing=10)  # RowにすべてのColumnを追加

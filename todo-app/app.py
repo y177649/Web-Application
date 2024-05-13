@@ -14,9 +14,9 @@ def main(page: ft.Page):
 
     def strike_through_task(e):
         if e.control.value:
-            e.control.label = f"<s>{e.control.label}</s>"
+            e.control.text_color = 0xAAAAAA  # 灰色に設定
         else:
-            e.control.label = e.control.label.replace("<s>", "").replace("</s>", "")
+            e.control.text_color = 0x000000  # 黒色に戻す
         page.update()
 
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -25,7 +25,7 @@ def main(page: ft.Page):
     for day in days:
         day_column = ft.Column(spacing=5)  # Columnを作成
         label = ft.Text(value=day, size=20, weight="bold")
-        text_field = ft.TextField(width=300)
+        text_field = ft.TextField(width=150)
         add_button = ft.ElevatedButton(text="Add Task", on_click=lambda e, day_column=day_column, text_field=text_field: add_task(day_column, text_field))
         day_column.controls.extend([label, text_field, add_button])
         days_columns.append(day_column)

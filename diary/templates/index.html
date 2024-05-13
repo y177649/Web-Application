@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Diary App</title>
+</head>
+<body>
+    <h1>My Diary</h1>
+    <form id="diaryForm" method="POST" action="/add">
+        <input type="text" id="title" name="title" placeholder="タイトル" required><br>
+        <input type="date" id="date" name="date" required><br>
+        <textarea id="content" name="content" placeholder="考えを書き込んでください..." required></textarea><br>
+        <input type="text" id="tags" name="tags" placeholder="タグ (カンマ区切り)" required><br>
+        <button type="submit">エントリーを追加</button>
+    </form>
+    <div id="entries">
+        {% for entry in entries %}
+        <div class="entry">
+            <h2>{{ entry.title }}</h2>
+            <p>{{ entry.date.strftime('%Y-%m-%d') }}</p>
+            <p>{{ entry.content }}</p>
+            <p>Tags: {{ entry.tags }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
